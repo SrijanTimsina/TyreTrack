@@ -16,6 +16,19 @@ body {
 	padding: 0 20px;
 	overflow: hidden;
 }
+.fade-in {
+	opacity: 0;
+	animation: fade-in 1s ease-in-out forwards;
+}
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
 .navbar {
 	display: flex;
 	position: relative;
@@ -107,7 +120,7 @@ body {
 		}
 
 		.navbar-links ul li a {
-			padding: 0.5rem 1rem;
+			padding: 10px 10px;
 		}
 
 		.navbar-links.active {
