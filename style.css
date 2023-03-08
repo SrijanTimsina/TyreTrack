@@ -1,0 +1,322 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+  padding: 0 20px;
+  overflow: hidden;
+}
+
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  padding: 20px 0;
+  border-bottom: 2px solid #0071bc;
+}
+
+.navbar .brand-title img {
+  height: 70px;
+  width: 150px;
+}
+
+.navbar .navbar-links {
+  height: 100%;
+}
+
+.navbar .navbar-links ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar .navbar-links li {
+  list-style: none;
+}
+
+.navbar .navbar-links li a {
+  display: block;
+  text-decoration: none;
+  padding: 20px 30px;
+  font-size: 20px;
+  font-weight: bolder;
+  color: #0071bc;
+}
+
+.navbar .navbar-links li:hover {
+  background-color: #0071bc;
+}
+
+.navbar .navbar-links li:hover a {
+  color: white;
+}
+
+.navbar .toggle-button {
+  position: absolute;
+  top: 45px;
+  right: 20px;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 30px;
+  height: 21px;
+}
+
+.navbar .toggle-button .bar {
+  height: 3px;
+  width: 100%;
+  background-color: #0071bc;
+  border-radius: 10px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+@media only screen and (max-width: 600px) {
+  .navbar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    height: 115.5px;
+    overflow: hidden;
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+  }
+  .navbar .toggle-button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .navbar .navbar-links {
+    margin-top: 20px;
+    width: 100%;
+  }
+  .navbar .navbar-links ul {
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .navbar .navbar-links ul li {
+    text-align: center;
+  }
+  .navbar .navbar-links ul li a {
+    padding: 0.5rem 1rem;
+  }
+  .navbar .navbar-links.active {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .navbar .toggle-button.active .bar:nth-child(1) {
+    -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+            transform: rotate(-45deg) translate(-6px, 6px);
+  }
+  .navbar .toggle-button.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .navbar .toggle-button.active .bar:nth-child(3) {
+    -webkit-transform: rotate(45deg) translate(-6px, -6px);
+            transform: rotate(45deg) translate(-6px, -6px);
+  }
+}
+
+.navbar.active {
+  height: 262.5px;
+}
+
+.heading {
+  color: #0071bc;
+  margin: 0;
+  padding: 30px 0 10px 0;
+  font-size: 40px;
+}
+
+@media screen and (max-width: 600px) {
+  .heading {
+    font-size: 24px;
+  }
+}
+
+.information {
+  padding: 20px 0;
+}
+
+.information .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.information .info img {
+  height: 100px;
+  padding: 10px 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  margin-right: 30px;
+}
+
+.information .info .info-text {
+  color: #0071bc;
+  font-size: 24px;
+}
+
+.information .info .info-text .bold {
+  text-shadow: 1px 0 currentColor;
+  letter-spacing: 1px;
+  font-weight: 900;
+}
+
+.information .general-information {
+  margin-top: 10px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[6];
+      grid-template-columns: repeat(6, 1fr);
+  padding: 30px 0;
+  background-color: #f4f4f4;
+  border-radius: 20px;
+}
+
+.information .general-information .general-informations {
+  text-align: center;
+  color: #0071bc;
+}
+
+.information .general-information .general-informations .bold {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.information .general-information .general-informations .small {
+  margin: 0;
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+@media screen and (max-width: 800px) {
+  .information .general-information {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .information .info .info-text {
+    font-size: 20px;
+  }
+  .information .general-information {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+.tracking {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  grid-auto-flow: column;
+  position: relative;
+}
+
+.tracking div {
+  position: relative;
+  height: 80px;
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px);
+}
+
+.tracking div a {
+  text-decoration: none;
+  color: #0071bc;
+  cursor: pointer;
+}
+
+.tracking div .tracking-line {
+  height: 3px;
+  width: 100%;
+  background-color: #0071bc;
+}
+
+.tracking div .circle {
+  background-color: #48a0f8;
+  height: 10px;
+  width: 10px;
+  position: absolute;
+  top: -4px;
+  left: calc(50% - 5px);
+  border-radius: 50%;
+  border: 1px solid white;
+  -webkit-box-shadow: 0px 0px 0 4px #0071bc;
+          box-shadow: 0px 0px 0 4px #0071bc;
+}
+
+.tracking div p {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.tracking div:nth-child(2) .tracking-line {
+  width: 50%;
+  margin-left: 50%;
+}
+
+.tracking div:last-child .tracking-line {
+  width: 50%;
+}
+
+.tracking .tracking-cover {
+  width: 100%;
+  height: 150px;
+  position: absolute;
+  top: 10px;
+  left: 0px;
+  background-color: white;
+  z-index: 1000;
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+}
+
+.tracking .loading {
+  -webkit-transform: translateX(1000px);
+          transform: translateX(1000px);
+}

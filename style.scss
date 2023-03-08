@@ -1,0 +1,265 @@
+$primary-color: #0071bc;
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "Ubuntu", sans-serif;
+}
+.wrapper {
+	width: 100%;
+	max-width: 1000px;
+	margin: auto;
+	padding: 0 20px;
+	overflow: hidden;
+}
+.navbar {
+	display: flex;
+	position: relative;
+	justify-content: space-between;
+	align-items: center;
+	color: white;
+	padding: 20px 0;
+	border-bottom: 2px solid $primary-color;
+
+	.brand-title img {
+		height: 70px;
+		width: 150px;
+	}
+
+	.navbar-links {
+		height: 100%;
+	}
+
+	.navbar-links ul {
+		display: flex;
+		margin: 0;
+		padding: 0;
+	}
+
+	.navbar-links li {
+		list-style: none;
+	}
+
+	.navbar-links li a {
+		display: block;
+		text-decoration: none;
+		padding: 20px 30px;
+		font-size: 20px;
+		font-weight: bolder;
+		color: $primary-color;
+	}
+
+	.navbar-links li:hover {
+		background-color: $primary-color;
+
+		a {
+			color: white;
+		}
+	}
+
+	.toggle-button {
+		position: absolute;
+		top: 45px;
+		right: 20px;
+		display: none;
+		flex-direction: column;
+		justify-content: space-between;
+		width: 30px;
+		height: 21px;
+	}
+
+	.toggle-button .bar {
+		height: 3px;
+		width: 100%;
+		background-color: $primary-color;
+		border-radius: 10px;
+		transition: 0.4s;
+	}
+
+	@media only screen and (max-width: 600px) {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		height: 115.5px;
+		overflow: hidden;
+		transition: 0.5s ease-in-out;
+
+		.toggle-button {
+			display: flex;
+		}
+
+		.navbar-links {
+			margin-top: 20px;
+			width: 100%;
+		}
+
+		.navbar-links ul {
+			width: 100%;
+			flex-direction: column;
+		}
+
+		.navbar-links ul li {
+			text-align: center;
+		}
+
+		.navbar-links ul li a {
+			padding: 0.5rem 1rem;
+		}
+
+		.navbar-links.active {
+			display: flex;
+		}
+		.toggle-button.active .bar:nth-child(1) {
+			transform: rotate(-45deg) translate(-6px, 6px);
+		}
+
+		.toggle-button.active .bar:nth-child(2) {
+			opacity: 0;
+		}
+
+		.toggle-button.active .bar:nth-child(3) {
+			transform: rotate(45deg) translate(-6px, -6px);
+		}
+	}
+}
+.navbar.active {
+	height: 262.5px;
+}
+.heading {
+	color: $primary-color;
+	margin: 0;
+	padding: 30px 0 10px 0;
+	font-size: 40px;
+	@media screen and (max-width: 600px) {
+		font-size: 24px;
+	}
+}
+.information {
+	padding: 20px 0;
+	.info {
+		display: flex;
+		align-items: center;
+		img {
+			height: 100px;
+			padding: 10px 20px;
+			background-color: #f4f4f4;
+			border-radius: 10px;
+			margin-right: 30px;
+		}
+
+		.info-text {
+			color: $primary-color;
+			font-size: 24px;
+			.bold {
+				text-shadow: 1px 0 currentColor;
+				letter-spacing: 1px;
+				font-weight: 900;
+			}
+		}
+	}
+
+	.general-information {
+		margin-top: 10px;
+		display: grid;
+		grid-template-columns: repeat(6, 1fr);
+		padding: 30px 0;
+		background-color: #f4f4f4;
+		border-radius: 20px;
+		.general-informations {
+			text-align: center;
+			color: $primary-color;
+
+			.bold {
+				font-size: 36px;
+				font-weight: bold;
+				margin: 0;
+			}
+			.small {
+				margin: 0;
+				margin-top: 10px;
+				font-size: 12px;
+			}
+		}
+	}
+	@media screen and (max-width: 800px) {
+		.general-information {
+			grid-template-columns: repeat(3, 1fr);
+			gap: 20px;
+		}
+	}
+	@media screen and (max-width: 600px) {
+		.info .info-text {
+			font-size: 20px;
+		}
+		.general-information {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 20px;
+		}
+	}
+}
+.tracking {
+	width: 100%;
+	display: grid;
+	grid-auto-flow: column;
+	position: relative;
+
+	div {
+		position: relative;
+		height: 80px;
+		transform: translateY(20px);
+		a {
+			text-decoration: none;
+			color: $primary-color;
+			cursor: pointer;
+		}
+		.tracking-line {
+			height: 3px;
+			width: 100%;
+			background-color: $primary-color;
+		}
+		.circle {
+			background-color: rgb(72, 160, 248);
+			height: 10px;
+			width: 10px;
+			position: absolute;
+			top: -4px;
+			left: calc(50% - 5px);
+			border-radius: 50%;
+			border: 1px solid white;
+			box-shadow: 0px 0px 0 4px $primary-color;
+		}
+
+		p {
+			padding-top: 20px;
+			text-align: center;
+		}
+	}
+	div:nth-child(2) {
+		.tracking-line {
+			width: 50%;
+			margin-left: 50%;
+		}
+	}
+	div:last-child {
+		.tracking-line {
+			width: 50%;
+		}
+	}
+	.tracking-cover {
+		width: 100%;
+		height: 150px;
+		position: absolute;
+		top: 10px;
+		left: 0px;
+		background-color: white;
+		z-index: 1000;
+		transition: 1s ease-in-out;
+	}
+	.loading {
+		transform: translateX(1000px);
+	}
+}
