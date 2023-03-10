@@ -19,10 +19,8 @@ toggleButton.addEventListener("click", () => {
 	toggleButton.classList.toggle("active");
 	navbar.classList.toggle("active");
 });
-
-const web3 = new Web3(
-	"https://goerli.infura.io/v3/14c80351c1a84ca985d997a0d7ec0553"
-);
+const apiKey = process.env.API_KEY;
+const web3 = new Web3(`https://goerli.infura.io/v3/${apiKey}`);
 
 const contractAddress = "0x0BeB9D7CC3d7568954E450Fc13195A4224bE5bee";
 let contractAbi = [
@@ -290,7 +288,6 @@ async function name() {
 	fetch(tokenURI)
 		.then((response) => response.json())
 		.then((data) => {
-			console.log(data);
 			marca.innerHTML = data.marca;
 			model.innerHTML = data.modello;
 			variante.innerHTML = data.variante;
@@ -313,9 +310,18 @@ async function name() {
 			if (events.length < 2) {
 				tracking.classList.add("one");
 			}
+			const arr = [
+				"Trasporto CdRC",
+				"Trasporto CSS",
+				"Trasformazione MPS",
+			];
 			const trackingElements = events.map((el) => {
 				let div = document.createElement("div");
-				div.innerHTML = `<a href="https://goerli.etherscan.io/tx/${el.transactionHash}" target="blank"><div class="tracking-line"></div><div class="circle"></div><p>${el.event}</p></a>`;
+				div.innerHTML = `<a href="https://goerli.etherscan.io/tx/${
+					el.transactionHash
+				}" target="blank"><div class="tracking-line"></div><div class="circle"></div><p>${
+					arr[events.indexOf(el)]
+				}</p></a>`;
 				return div;
 			});
 			tracking.append(...trackingElements);
