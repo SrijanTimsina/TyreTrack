@@ -4,6 +4,7 @@ const toggleButton =
 const navbarLinks =
 	document.getElementsByClassName("navbar-links")[0];
 const navbar = document.getElementById("navbar");
+const tracking = document.getElementById("tracking");
 const marca = document.getElementById("marca");
 const model = document.getElementById("model");
 const variante = document.getElementById("variante");
@@ -22,7 +23,7 @@ toggleButton.addEventListener("click", () => {
 const web3 = new Web3(
 	"https://goerli.infura.io/v3/14c80351c1a84ca985d997a0d7ec0553"
 );
-const apiKey = "UTK4T8BEA9FZY3DYF1RIJXZIUJ2P9V94PQ";
+
 const contractAddress = "0x0BeB9D7CC3d7568954E450Fc13195A4224bE5bee";
 let contractAbi = [
 	{ inputs: [], stateMutability: "nonpayable", type: "constructor" },
@@ -289,7 +290,6 @@ async function name() {
 	fetch(tokenURI)
 		.then((response) => response.json())
 		.then((data) => {
-			console.log(data);
 			marca.innerHTML = data.marca;
 			model.innerHTML = data.modello;
 			variante.innerHTML = data.struttura;
@@ -309,6 +309,9 @@ async function name() {
 			toBlock: "latest",
 		})
 		.then((events) => {
+			if (events.length < 2) {
+				tracking.classList.add("one");
+			}
 			const trackingElements = events.map((el) => {
 				let div = document.createElement("div");
 				div.innerHTML = `<a href="https://goerli.etherscan.io/tx/${el.transactionHash}" target="blank"><div class="tracking-line"></div><div class="circle"></div><p>${el.event}</p></a>`;
@@ -318,4 +321,5 @@ async function name() {
 			trackingCover.classList.add("loading");
 		});
 }
+
 name();
