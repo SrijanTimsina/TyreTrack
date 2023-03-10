@@ -19,7 +19,7 @@ toggleButton.addEventListener("click", () => {
 	toggleButton.classList.toggle("active");
 	navbar.classList.toggle("active");
 });
-const apiKey = process.env.API_KEY;
+const apiKey = API_KEY;
 const web3 = new Web3(`https://goerli.infura.io/v3/${apiKey}`);
 
 const contractAddress = "0x0BeB9D7CC3d7568954E450Fc13195A4224bE5bee";
