@@ -290,6 +290,7 @@ async function name() {
 	fetch(tokenURI)
 		.then((response) => response.json())
 		.then((data) => {
+			console.log(data);
 			marca.innerHTML = data.marca;
 			model.innerHTML = data.modello;
 			variante.innerHTML = data.variante;
