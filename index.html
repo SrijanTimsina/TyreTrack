@@ -10,7 +10,7 @@
 		<link rel="stylesheet" href="style.css" />
 		<title>Tyre Track</title>
 	</head>
-	<body onload="loadFunction()">
+	<body>
 		<div class="wrapper fade-in">
 			<nav class="navbar" id="navbar">
 				<div class="brand-title">
@@ -33,34 +33,34 @@
 				<div class="info">
 					<img src="./images/tyreexamp.png" alt="tyreTrack image" />
 					<div class="info-text">
-						<p>Marca: <span class="bold">Pirelli</span></p>
-						<p>Modello: <span class="bold">Cinturato</span></p>
+						<p>Marca: <span class="bold" id="marca"></span></p>
+						<p>Modello: <span class="bold" id="model"></span></p>
 					</div>
 				</div>
 				<h1 class="heading">Informazioni Generali</h1>
 				<div class="general-information">
 					<div class="general-informations">
-						<p class="bold">P7</p>
+						<p class="bold" id="variante"></p>
 						<p class="small">VARIANTE</p>
 					</div>
 					<div class="general-informations">
-						<p class="bold">1422</p>
+						<p class="bold" id="codice"></p>
 						<p class="small">CODICE</p>
 					</div>
 					<div class="general-informations">
-						<p class="bold">205</p>
+						<p class="bold" id="larghezza"></p>
 						<p class="small">LARGHEZZA</p>
 					</div>
 					<div class="general-informations">
-						<p class="bold">55</p>
+						<p class="bold" id="serie"></p>
 						<p class="small">SERIE</p>
 					</div>
 					<div class="general-informations">
-						<p class="bold">16</p>
+						<p class="bold" id="diametro"></p>
 						<p class="small">DIAMETRO</p>
 					</div>
 					<div class="general-informations">
-						<p class="bold">T</p>
+						<p class="bold" id="cat-vel"></p>
 						<p class="small">CAT. VEL.</p>
 					</div>
 				</div>
@@ -71,5 +71,9 @@
 			</section>
 		</div>
 	</body>
+
+	<script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
 	<script src="index.js"></script>
 </html>
