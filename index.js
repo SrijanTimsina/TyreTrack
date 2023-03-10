@@ -292,7 +292,7 @@ async function name() {
 		.then((data) => {
 			marca.innerHTML = data.marca;
 			model.innerHTML = data.modello;
-			variante.innerHTML = data.struttura;
+			variante.innerHTML = data.variante;
 			codice.innerHTML = data.codice;
 			larghezza.innerHTML = data.larghezza;
 			serie.innerHTML = data.serie;
